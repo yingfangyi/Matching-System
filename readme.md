@@ -33,12 +33,12 @@
 * `./main`运行文件
 6. 由thrift接口生成客户端，在**game**文件夹中创建src文件夹，执行`thrift -r --gen py tutorial.thrift`生成**gen.py**将其改名为**match_client**，查看文件中有服务器端文件**Match-remote**将其删除，因为目前只需要生成客户端（注意：在cpp中生成客户端此文件必须删除，因为cpp编译文件中只能有一个main函数）  
 7. 在src目录下创建**client.py**，将官方文档中的client端代码复制到client.py中，注意修改头文件，执行`python3 <filename>`看看编译成功。如果编译成功则在代码中加上用户信息并调用服务端的函数，先启动服务端的main.cpp，再运行client.py看看服务端和客户端是否连接成功。修改代码使其能够读取终端中输入用户，编译运行如成功运行则match客户端完成
-8. 修改服务端，具体修改逻辑参考<https://git.acwing.com/ycr2022/thrift/-/blob/master/match_system/src/main.cpp>
+8. 修改服务端
 9. 在thrift文件夹目录下新建**save.thrift**，在y总目录中将内容复制过来，在src目录下同样执行`thrift -r --gen py tutorial.thrift`生成**gen.cpp**文件将其改名为**save.client**，进入文件夹将里面的.skeleton.cpp删除
-10. 在**main.cpp**中实现save_client的功能，查看thrift官方文档，具体修改逻辑参考<https://git.acwing.com/ycr2022/thrift/-/blob/master/match_system/src/main.cpp>
+10. 在**main.cpp**中实现save_client的功能，查看thrift官方文档
 11. 实现具体业务需求
-* 将消费者模型升级为多线程4.0<https://git.acwing.com/ycr2022/thrift/-/commit/bd7a35d87fb1ca90cdae7a073b060f6f838f819b>
-* 将匹配机制完善5.0，等待时间越长，阈值越大<https://git.acwing.com/ycr2022/thrift/-/commit/bd2ae34a66ec180f4b4f4da4f6ecd4a3810dc297>
+* 将消费者模型升级为多线程4.0
+* 将匹配机制完善5.0，等待时间越长，阈值越大
 ### 三、知识点总结（根据git仓库history总结）
 #### 构建match.thrift接口（match.thrift版本）
 - 查询thrift官方文档<https://github.com/apache/thrift/blob/master/tutorial/tutorial.thrift>根据项目需求按照thrift文档语法要求定义命名空间，用户信息，接口服务内容
